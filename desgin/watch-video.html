@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="home.html" class="logo">Efficient Elearning</a>
+
+        <form action="search.html" method="post" class="search-form">
+          <input
+            type="text"
+            name="search_box"
+            required
+            placeholder="Tìm bài giảng..."
+            maxlength="100"
+          />
+          <button type="submit" class="fas fa-search"></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+
+        <div class="profile">
+          <img src="images/pic-1.jpg" class="image" alt="" />
+          <h3 class="name">Đức</h3>
+          <p class="role">Học viên</p>
+          <a href="profile.html" class="btn">Xem hồ sơ</a>
+          <div class="flex-btn">
+            <a href="login.html" class="option-btn">Đăng nhập</a>
+            <a href="register.html" class="option-btn">Đăng ký</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div class="side-bar">
+      <div id="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+        <img src="images/pic-1.jpg" class="image" alt="" />
+        <h3 class="name">Đức</h3>
+        <p class="role">Học viên</p>
+        <a href="profile.html" class="btn">Xem hồ sơ</a>
+      </div>
+
+      <nav class="navbar">
+        <a href="home.html"
+          ><i class="fas fa-home"></i><span>Trang chủ</span></a
+        >
+        <a href="about.html"
+          ><i class="fas fa-question"></i><span>Thông tin</span></a
+        >
+        <a href="courses.html"
+          ><i class="fas fa-graduation-cap"></i><span>Khóa học</span></a
+        >
+        <a href="teachers.html"
+          ><i class="fas fa-chalkboard-user"></i><span>Giảng viên</span></a
+        >
+        <a href="contact.html"
+          ><i class="fas fa-headset"></i><span>Liên hệ</span></a
+        >
+      </nav>
+    </div>
+
+    <section class="watch-video">
+      <div class="video-container">
+        <div class="video">
+          <video
+            src="images/vid-1.mp4"
+            controls
+            poster="images/post-1-1.png"
+            id="video"
+          ></video>
+        </div>
+        <h3 class="title">Hoàn thành khóa học HTML (phần 01)</h3>
+        <div class="info">
+          <p class="date">
+            <i class="fas fa-calendar"></i><span>13-05-2024</span>
+          </p>
+          <p class="date"><i class="fas fa-heart"></i><span>44 likes</span></p>
+        </div>
+        <div class="tutor">
+          <img src="images/pic-2.jpg" alt="" />
+          <div>
+            <h3>Đức</h3>
+            <span>developer</span>
+          </div>
+        </div>
+        <form action="" method="post" class="flex">
+          <a href="playlist.html" class="inline-btn">Xem danh sách phát</a>
+          <button><i class="far fa-heart"></i><span>Thích</span></button>
+        </form>
+        <p class="description">
+          Đây là mô tả chi tiết cho khóa học từ cơ bản tới nâng cao của HTML CSS
+          JS.Đây là mô tả chi tiết cho khóa học từ cơ bản tới nâng cao của HTML
+          CSS JS.Đây là mô tả chi tiết cho khóa học từ cơ bản tới nâng cao của
+          HTML CSS JS.
+        </p>
+      </div>
+    </section>
+
+    <section class="comments">
+      <h1 class="heading">5 bình luận</h1>
+
+      <form action="" class="add-comment">
+        <h3>Thêm bình luận</h3>
+        <textarea
+          name="comment_box"
+          placeholder="Nhập bình luận"
+          required
+          maxlength="1000"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <input
+          type="submit"
+          value="Thêm bình luận"
+          class="inline-btn"
+          name="add_comment"
+        />
+      </form>
+
+      <h1 class="heading">Bình luận</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-1.jpg" alt="" />
+            <div>
+              <h3>Huy</h3>
+              <span>13-05-2024</span>
+            </div>
+          </div>
+          <div class="comment-box">Đây là bình luận của Huy</div>
+          <form action="" class="flex-btn">
+            <input
+              type="submit"
+              value="Sửa bình luận"
+              name="edit_comment"
+              class="inline-option-btn"
+            />
+            <input
+              type="submit"
+              value="Xóa bình luận"
+              name="delete_comment"
+              class="inline-delete-btn"
+            />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-2.jpg" alt="" />
+            <div>
+              <h3>Đức</h3>
+              <span>13-05-2024</span>
+            </div>
+          </div>
+          <div class="comment-box">Tuyệt!</div>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-3.jpg" alt="" />
+            <div>
+              <h3>Đức</h3>
+              <span>13-05-2024</span>
+            </div>
+          </div>
+          <div class="comment-box">Cảm ơn vì video của bạn</div>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-4.jpg" alt="" />
+            <div>
+              <h3>Đức</h3>
+              <span>13-05-2024</span>
+            </div>
+          </div>
+          <div class="comment-box">Tôi thích nó!</div>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-5.jpg" alt="" />
+            <div>
+              <h3>Đức</h3>
+              <span>13-05-2024</span>
+            </div>
+          </div>
+          <div class="comment-box">Cảm ơn bạn rất nhiều</div>
+        </div>
+
+        <div class="box">
+          <div class="user">
+            <img src="images/pic-2.jpg" alt="" />
+            <div>
+              <h3>Đức</h3>
+              <span>13-05-2024</span>
+            </div>
+          </div>
+          <div class="comment-box">Tôi có thể tải video ở đâu?</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">&copy; Efficient Elearning</footer>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
