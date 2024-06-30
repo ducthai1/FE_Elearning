@@ -16,7 +16,7 @@ if(isset($_COOKIE['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>about</title>
+   <title>Thông tin</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -40,9 +40,9 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="content">
-         <h3>why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nobis distinctio, nisi consequatur ad sequi, rem odit fugiat assumenda eligendi iure aut sunt ratione, tempore porro expedita quisquam.</p>
-         <a href="courses.html" class="inline-btn">our courses</a>
+         <h3>Tại sao chọn chúng tôi?</h3>
+         <p>Vì chúng tôi 10 điểm chúng tôi tuyệt vời .</p>
+         <a href="courses.php" class="inline-btn">Khóa học của chúng tôi</a>
       </div>
 
    </div>
@@ -53,7 +53,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-graduation-cap"></i>
          <div>
             <h3>+1k</h3>
-            <span>online courses</span>
+            <span>Khóa học online</span>
          </div>
       </div>
 
@@ -61,7 +61,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-user-graduate"></i>
          <div>
             <h3>+25k</h3>
-            <span>brilliants students</span>
+            <span>Học viên</span>
          </div>
       </div>
 
@@ -69,7 +69,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-chalkboard-user"></i>
          <div>
             <h3>+5k</h3>
-            <span>expert teachers</span>
+            <span>Giảng viên có kinh nghiệm</span>
          </div>
       </div>
 
@@ -77,7 +77,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-briefcase"></i>
          <div>
             <h3>100%</h3>
-            <span>job placement</span>
+            <span>Vị trí việc làm</span>
          </div>
       </div>
 
@@ -91,16 +91,16 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="reviews">
 
-   <h1 class="heading">student's reviews</h1>
+   <h1 class="heading">Đánh giá của học viên</h1>
 
    <div class="box-container">
 
       <div class="box">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <p>Đây là đánh giá của học viên?</p>
          <div class="user">
             <img src="images/pic-2.jpg" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Đức</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -113,11 +113,11 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="box">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <p>Đây cũng là đánh giá của học viên</p>
          <div class="user">
             <img src="images/pic-3.jpg" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Đức</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -130,11 +130,11 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="box">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <p>Lại là đánh giá của học viên?</p>
          <div class="user">
             <img src="images/pic-4.jpg" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Huy</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -147,11 +147,11 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="box">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <p>Đánh giá của học viên nữa hả?</p>
          <div class="user">
             <img src="images/pic-5.jpg" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Huy</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -164,11 +164,11 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="box">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <p>Ô vẫn là đánh giá của học viên nè?</p>
          <div class="user">
             <img src="images/pic-6.jpg" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Đức</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -181,11 +181,11 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="box">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <p>Đánh giá đỉnh nhất là?</p>
          <div class="user">
             <img src="images/pic-7.jpg" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Đức</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>

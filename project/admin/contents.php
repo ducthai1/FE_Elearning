@@ -29,9 +29,9 @@ if(isset($_POST['delete_video'])){
       $delete_comments->execute([$delete_id]);
       $delete_content = $conn->prepare("DELETE FROM `content` WHERE id = ?");
       $delete_content->execute([$delete_id]);
-      $message[] = 'video deleted!';
+      $message[] = 'Đã xóa video!';
    }else{
-      $message[] = 'video already deleted!';
+      $message[] = 'Video đã được xóa!';
    }
 
 }
@@ -44,7 +44,7 @@ if(isset($_POST['delete_video'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dashboard</title>
+   <title>Bảng điều khiển</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -59,13 +59,13 @@ if(isset($_POST['delete_video'])){
    
 <section class="contents">
 
-   <h1 class="heading">your contents</h1>
+   <h1 class="heading">Bài giảng của bạn</h1>
 
    <div class="box-container">
 
    <div class="box" style="text-align: center;">
-      <h3 class="title" style="margin-bottom: .5rem;">create new content</h3>
-      <a href="add_content.php" class="btn">add content</a>
+      <h3 class="title" style="margin-bottom: .5rem;">Tạo mới bài giảng</h3>
+      <a href="add_content.php" class="btn">Thêm bài giảng</a>
    </div>
 
    <?php
@@ -85,14 +85,14 @@ if(isset($_POST['delete_video'])){
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="video_id" value="<?= $video_id; ?>">
             <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this video?');" name="delete_video">
+            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('Xóa bài giảng này?');" name="delete_video">
          </form>
          <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">view content</a>
       </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no contents added yet!</p>';
+         echo '<p class="empty">Chưa có bài giảng nào được thêm!</p>';
       }
    ?>
 

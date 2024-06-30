@@ -28,9 +28,9 @@ if(isset($_POST['delete'])){
    $delete_bookmark->execute([$delete_id]);
    $delete_playlist = $conn->prepare("DELETE FROM `playlist` WHERE id = ?");
    $delete_playlist->execute([$delete_id]);
-   $message[] = 'playlist deleted!';
+   $message[] = 'Đã xóa khóa học!';
    }else{
-      $message[] = 'playlist already deleted!';
+      $message[] = 'Khóa học đã được xóa!';
    }
 }
 
@@ -42,7 +42,7 @@ if(isset($_POST['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Playlists</title>
+   <title>Khóa học</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -57,13 +57,13 @@ if(isset($_POST['delete'])){
 
 <section class="playlists">
 
-   <h1 class="heading">added playlists</h1>
+   <h1 class="heading">Khóa học đã thêm</h1>
 
    <div class="box-container">
    
       <div class="box" style="text-align: center;">
-         <h3 class="title" style="margin-bottom: .5rem;">create new playlist</h3>
-         <a href="add_playlist.php" class="btn">add playlist</a>
+         <h3 class="title" style="margin-bottom: .5rem;">Tạo khóa học mới</h3>
+         <a href="add_playlist.php" class="btn">Thêm khóa học</a>
       </div>
 
       <?php
@@ -89,15 +89,15 @@ if(isset($_POST['delete'])){
          <p class="description"><?= $fetch_playlist['description']; ?></p>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="playlist_id" value="<?= $playlist_id; ?>">
-            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
+            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">Cập nhật</a>
+            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('Xóa khóa học này?');" name="delete">
          </form>
-         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view playlist</a>
+         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">Xem khóa học</a>
       </div>
       <?php
          } 
       }else{
-         echo '<p class="empty">no playlist added yet!</p>';
+         echo '<p class="empty">Chưa có khóa học nào được thêm!</p>';
       }
       ?>
 

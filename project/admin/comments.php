@@ -20,9 +20,9 @@ if(isset($_POST['delete_comment'])){
    if($verify_comment->rowCount() > 0){
       $delete_comment = $conn->prepare("DELETE FROM `comments` WHERE id = ?");
       $delete_comment->execute([$delete_id]);
-      $message[] = 'comment deleted successfully!';
+      $message[] = 'Xóa bình luận thành công!';
    }else{
-      $message[] = 'comment already deleted!';
+      $message[] = 'Bình luận đã được xóa!';
    }
 
 }
@@ -35,7 +35,7 @@ if(isset($_POST['delete_comment'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dashboard</title>
+   <title>Bảng điều khiển</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -51,7 +51,7 @@ if(isset($_POST['delete_comment'])){
 
 <section class="comments">
 
-   <h1 class="heading">user comments</h1>
+   <h1 class="heading">Bình luận</h1>
 
    
    <div class="show-comments">
@@ -69,13 +69,13 @@ if(isset($_POST['delete_comment'])){
          <p class="text"><?= $fetch_comment['comment']; ?></p>
          <form action="" method="post">
             <input type="hidden" name="comment_id" value="<?= $fetch_comment['id']; ?>">
-            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');">delete comment</button>
+            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('Xóa bình luận này?');">Xóa bình luận</button>
          </form>
       </div>
       <?php
        }
       }else{
-         echo '<p class="empty">no comments added yet!</p>';
+         echo '<p class="empty">Chưa có bình luận nào!</p>';
       }
       ?>
       </div>

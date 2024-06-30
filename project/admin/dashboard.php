@@ -33,7 +33,7 @@ $total_comments = $select_comments->rowCount();
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dashboard</title>
+   <title>Bảng điều khiển</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -48,46 +48,46 @@ $total_comments = $select_comments->rowCount();
    
 <section class="dashboard">
 
-   <h1 class="heading">dashboard</h1>
+   <h1 class="heading">Bảng điều khiển</h1>
 
    <div class="box-container">
 
       <div class="box">
-         <h3>welcome!</h3>
+         <h3>Xin chào!</h3>
          <p><?= $fetch_profile['name']; ?></p>
-         <a href="profile.php" class="btn">view profile</a>
+         <a href="profile.php" class="btn">Xem hồ sơ</a>
       </div>
 
       <div class="box">
          <h3><?= $total_contents; ?></h3>
-         <p>total contents</p>
-         <a href="add_content.php" class="btn">add new content</a>
+         <p>Tổng bài giảng</p>
+         <a href="add_content.php" class="btn">Thêm bài giảng mới</a>
       </div>
 
       <div class="box">
          <h3><?= $total_playlists; ?></h3>
-         <p>total playlists</p>
-         <a href="add_playlist.php" class="btn">add new playlist</a>
+         <p>Tổng khóa học</p>
+         <a href="add_playlist.php" class="btn">Thêm khóa học mới</a>
       </div>
 
       <div class="box">
          <h3><?= $total_likes; ?></h3>
          <p>total likes</p>
-         <a href="contents.php" class="btn">view contents</a>
+         <a href="contents.php" class="btn">Xem bài giảng</a>
       </div>
 
       <div class="box">
          <h3><?= $total_comments; ?></h3>
-         <p>total comments</p>
-         <a href="comments.php" class="btn">view comments</a>
+         <p>Tổng bình luận</p>
+         <a href="comments.php" class="btn">Xem bình luận</a>
       </div>
 
       <div class="box">
-         <h3>quick select</h3>
-         <p>login or register</p>
+         <h3>Tính năng</h3>
+         <p>Đăng nhập hoặc Đăng ký</p>
          <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
+            <a href="login.php" class="option-btn">Đăng nhập</a>
+            <a href="register.php" class="option-btn">Đăng ký</a>
          </div>
       </div>
 

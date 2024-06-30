@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
 
    if(!empty($image)){
       if($image_size > 2000000){
-         $message[] = 'image size is too large!';
+         $message[] = 'Kích thước ảnh quá lớn!';
       }else{
          $update_image = $conn->prepare("UPDATE `playlist` SET thumb = ? WHERE id = ?");
          $update_image->execute([$rename, $get_id]);
@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
       }
    } 
 
-   $message[] = 'playlist updated!';  
+   $message[] = 'Đã cập nhật khóa học!';  
 
 }
 
@@ -77,7 +77,7 @@ if(isset($_POST['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Playlist</title>
+   <title>Cập nhật khóa học</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -92,7 +92,7 @@ if(isset($_POST['delete'])){
    
 <section class="playlist-form">
 
-   <h1 class="heading">update playlist</h1>
+   <h1 class="heading">Cập nhật khóa học</h1>
 
    <?php
          $select_playlist = $conn->prepare("SELECT * FROM `playlist` WHERE id = ?");
@@ -106,17 +106,17 @@ if(isset($_POST['delete'])){
       ?>
    <form action="" method="post" enctype="multipart/form-data">
       <input type="hidden" name="old_image" value="<?= $fetch_playlist['thumb']; ?>">
-      <p>playlist status <span>*</span></p>
+      <p>Trạng thái khóa học <span>*</span></p>
       <select name="status" class="box" required>
          <option value="<?= $fetch_playlist['status']; ?>" selected><?= $fetch_playlist['status']; ?></option>
-         <option value="active">active</option>
-         <option value="deactive">deactive</option>
+         <option value="active">Kích hoạt</option>
+         <option value="deactive">Chưa kích hoạt</option>
       </select>
-      <p>playlist title <span>*</span></p>
-      <input type="text" name="title" maxlength="100" required placeholder="enter playlist title" value="<?= $fetch_playlist['title']; ?>" class="box">
-      <p>playlist description <span>*</span></p>
-      <textarea name="description" class="box" required placeholder="write description" maxlength="1000" cols="30" rows="10"><?= $fetch_playlist['description']; ?></textarea>
-      <p>playlist thumbnail <span>*</span></p>
+      <p>Tiêu đề khóa học <span>*</span></p>
+      <input type="text" name="title" maxlength="100" required placeholder="Nhập tiêu đề khóa học" value="<?= $fetch_playlist['title']; ?>" class="box">
+      <p>Mô tả khóa học <span>*</span></p>
+      <textarea name="description" class="box" required placeholder="Viết mô tả khóa học" maxlength="1000" cols="30" rows="10"><?= $fetch_playlist['description']; ?></textarea>
+      <p>Hình thu nhỏ khóa học <span>*</span></p>
       <div class="thumb">
          <span><?= $total_videos; ?></span>
          <img src="../uploaded_files/<?= $fetch_playlist['thumb']; ?>" alt="">
@@ -124,14 +124,14 @@ if(isset($_POST['delete'])){
       <input type="file" name="image" accept="image/*" class="box">
       <input type="submit" value="update playlist" name="submit" class="btn">
       <div class="flex-btn">
-         <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
-         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">view playlist</a>
+         <input type="submit" value="Xóa" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
+         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">Xem khóa học</a>
       </div>
    </form>
    <?php
       } 
    }else{
-      echo '<p class="empty">no playlist added yet!</p>';
+      echo '<p class="empty">Chưa có khóa học nào được thêm!</p>';
    }
    ?>
 

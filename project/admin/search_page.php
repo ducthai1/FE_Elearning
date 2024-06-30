@@ -29,9 +29,9 @@ if(isset($_POST['delete_video'])){
       $delete_comments->execute([$delete_id]);
       $delete_content = $conn->prepare("DELETE FROM `content` WHERE id = ?");
       $delete_content->execute([$delete_id]);
-      $message[] = 'video deleted!';
+      $message[] = 'Đã xóa video!';
    }else{
-      $message[] = 'video already deleted!';
+      $message[] = 'Video đã được xóa!';
    }
 
 }
@@ -55,9 +55,9 @@ if(isset($_POST['delete_playlist'])){
    $delete_bookmark->execute([$delete_id]);
    $delete_playlist = $conn->prepare("DELETE FROM `playlist` WHERE id = ?");
    $delete_playlist->execute([$delete_id]);
-   $message[] = 'playlist deleted!';
+   $message[] = 'Đã xóa khóa học!';
    }else{
-      $message[] = 'playlist already deleted!';
+      $message[] = 'Khóa học đã được xóa!';
    }
 }
 
@@ -69,7 +69,7 @@ if(isset($_POST['delete_playlist'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dashboard</title>
+   <title>Bảng điều khiển</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -84,7 +84,7 @@ if(isset($_POST['delete_playlist'])){
    
 <section class="contents">
 
-   <h1 class="heading">contents</h1>
+   <h1 class="heading">Bài giảng</h1>
 
    <div class="box-container">
 
@@ -106,18 +106,18 @@ if(isset($_POST['delete_playlist'])){
          <h3 class="title"><?= $fecth_videos['title']; ?></h3>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="video_id" value="<?= $video_id; ?>">
-            <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this video?');" name="delete_video">
+            <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">Cập nhật</a>
+            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('Xóa bài giảng này?');" name="delete_video">
          </form>
-         <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">view content</a>
+         <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">Xem bài giảng</a>
       </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no contents founds!</p>';
+         echo '<p class="empty">Không tìm thấy bài giảng!</p>';
       }
    }else{
-      echo '<p class="empty">please search something!</p>';
+      echo '<p class="empty">Vui lòng tìm gì đó!</p>';
    }
    ?>
 
@@ -127,7 +127,7 @@ if(isset($_POST['delete_playlist'])){
 
 <section class="playlists">
 
-   <h1 class="heading">playlists</h1>
+   <h1 class="heading">Khóa học</h1>
 
    <div class="box-container">
    
@@ -156,17 +156,17 @@ if(isset($_POST['delete_playlist'])){
          <p class="description"><?= $fetch_playlist['description']; ?></p>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="playlist_id" value="<?= $playlist_id; ?>">
-            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete_playlist" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
+            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">Cập nhật</a>
+            <input type="submit" value="Xóa khóa học" class="delete-btn" onclick="return confirm('Xóa khóa học này?');" name="delete">
          </form>
-         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view playlist</a>
+         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">Xem khóa học</a>
       </div>
       <?php
          } 
       }else{
-         echo '<p class="empty">no playlists found!</p>';
+         echo '<p class="empty">Không tìm thấy khóa học!</p>';
       }}else{
-         echo '<p class="empty">please search something!</p>';
+         echo '<p class="empty">Hãy tìm kiếm gì đó!</p>';
       }
       ?>
 
