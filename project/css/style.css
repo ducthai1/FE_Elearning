@@ -638,7 +638,7 @@ section {
 .playlist .row .col .save-list button {
    font-size: 2rem;
    border-radius: .5rem;
-   background-color: var(--light-bg);
+   background-color: var(--red);
    padding: 1.2rem 2.5rem;
    cursor: pointer;
    margin-bottom: 2rem;
@@ -650,7 +650,7 @@ section {
 }
 
 .playlist .row .col .save-list button span {
-   color: var(--light-color);
+   color: var(--white);
 }
 
 .playlist .row .col .save-list button:hover {

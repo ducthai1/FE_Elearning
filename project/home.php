@@ -128,13 +128,13 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="courses">
 
-   <h1 class="heading">Khóa học mới nhất</h1>
+   <h1 class="heading">Khóa học của tôi</h1>
 
    <div class="box-container">
 
       <?php
-         $select_courses = $conn->prepare("SELECT * FROM `playlist` WHERE status = ? ORDER BY date DESC LIMIT 6");
-         $select_courses->execute(['active']);
+         $select_courses = $conn->prepare("SELECT * FROM playlist JOIN registrations ON playlist.id = registrations.playlist_id WHERE registrations.user_id = ? AND playlist.status = 'active' ORDER BY registrations.date DESC LIMIT 6");
+         $select_courses->execute([$user_id]);
          if($select_courses->rowCount() > 0){
             while($fetch_course = $select_courses->fetch(PDO::FETCH_ASSOC)){
                $course_id = $fetch_course['id'];

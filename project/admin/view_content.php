@@ -100,7 +100,7 @@ if(isset($_POST['delete_comment'])){
             $total_comments = $count_comments->rowCount();
    ?>
    <div class="container">
-      <video src="../uploaded_files/<?= $fetch_content['video']; ?>" autoplay controls poster="../uploaded_files/<?= $fetch_content['thumb']; ?>" class="video"></video>
+      <video src="../uploaded_videos/<?= $fetch_content['video']; ?>" autoplay controls poster="../uploaded_files/<?= $fetch_content['thumb']; ?>" class="video"></video>
       <div class="date"><i class="fas fa-calendar"></i><span><?= $fetch_content['date']; ?></span></div>
       <h3 class="title"><?= $fetch_content['title']; ?></h3>
       <div class="flex">
@@ -174,9 +174,6 @@ if(isset($_POST['delete_comment'])){
 
 
 
-
-
-<?php include '../components/footer.php'; ?>
 
 <script src="../js/admin_script.js"></script>
 

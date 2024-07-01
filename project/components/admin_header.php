@@ -18,7 +18,7 @@ if(isset($message)){
       <a href="dashboard.php" class="logo">Quản trị viên</a>
 
       <form action="search_page.php" method="post" class="search-form">
-         <input type="text" name="search" placeholder="search here..." required maxlength="100">
+         <input type="text" name="search" placeholder="Tìm kiếm..." required maxlength="100">
          <button type="submit" class="fas fa-search" name="search_btn"></button>
       </form>
 

@@ -14,6 +14,8 @@ if(isset($_POST['submit'])){
    $id = unique_id();
    $title = $_POST['title'];
    $title = filter_var($title, FILTER_SANITIZE_STRING);
+   $namespace = $_POST['namespace'];
+   $namespace = filter_var($namespace, FILTER_SANITIZE_STRING);
    $description = $_POST['description'];
    $description = filter_var($description, FILTER_SANITIZE_STRING);
    $status = $_POST['status'];
@@ -27,12 +29,16 @@ if(isset($_POST['submit'])){
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../uploaded_files/'.$rename;
 
-   $add_playlist = $conn->prepare("INSERT INTO `playlist`(id, tutor_id, title, description, thumb, status) VALUES(?,?,?,?,?,?)");
-   $add_playlist->execute([$id, $tutor_id, $title, $description, $rename, $status]);
+   // Thêm bản ghi vào cơ sở dữ liệu với trường namespace
+   $add_playlist = $conn->prepare("INSERT INTO `playlist` (id, tutor_id, title, description, thumb, status, namespace) VALUES (?, ?, ?, ?, ?, ?, ?)");
+   $add_playlist->execute([$id, $tutor_id, $title, $description, $rename, $status, $namespace]);
 
-   move_uploaded_file($image_tmp_name, $image_folder);
-
-   $message[] = 'Khóa học mới đã được tạo!';  
+   // Di chuyển tệp tải lên và kiểm tra lỗi
+   if (move_uploaded_file($image_tmp_name, $image_folder)) {
+      $message[] = 'Khóa học mới đã được tạo!';
+   } else {
+      $message[] = 'Lỗi khi tải lên hình ảnh!';
+   } 
 
 }
 
@@ -70,6 +76,8 @@ if(isset($_POST['submit'])){
       </select>
       <p>Tiêu đề khóa học<span>*</span></p>
       <input type="text" name="title" maxlength="100" required placeholder="Nhập tiêu đề khóa học" class="box">
+      <p>Namespace <span>*</span></p>
+      <input type="text" name="namespace" maxlength="255" required placeholder="Nhập namespace khóa học" class="box">
       <p>Mô tả khóa học <span>*</span></p>
       <textarea name="description" class="box" required placeholder="Nhập mô tả khóa học" maxlength="1000" cols="30" rows="10"></textarea>
       <p>Hình thu nhỏ khóa học <span>*</span></p>
@@ -78,19 +86,6 @@ if(isset($_POST['submit'])){
    </form>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php include '../components/footer.php'; ?>

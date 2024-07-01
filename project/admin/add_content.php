@@ -34,19 +34,20 @@ if(isset($_POST['submit'])){
    $video_ext = pathinfo($video, PATHINFO_EXTENSION);
    $rename_video = unique_id().'.'.$video_ext;
    $video_tmp_name = $_FILES['video']['tmp_name'];
-   $video_folder = '../uploaded_files/'.$rename_video;
+   $video_folder = '../uploaded_videos/'.$rename_video;
 
    if($thumb_size > 2000000){
       $message[] = 'image size is too large!';
    }else{
       $add_playlist = $conn->prepare("INSERT INTO `content`(id, tutor_id, playlist_id, title, description, video, thumb, status) VALUES(?,?,?,?,?,?,?,?)");
       $add_playlist->execute([$id, $tutor_id, $playlist, $title, $description, $rename_video, $rename_thumb, $status]);
-      move_uploaded_file($thumb_tmp_name, $thumb_folder);
-      move_uploaded_file($video_tmp_name, $video_folder);
-      $message[] = 'Đã tải lên video bài giảng!';
+      // Di chuyển tệp tải lên và kiểm tra lỗi
+      if (move_uploaded_file($thumb_tmp_name, $thumb_folder) && move_uploaded_file($video_tmp_name, $video_folder)) {
+         $message[] = 'Đã tải lên video bài giảng!';
+      } else {
+         $message[] = 'Lỗi khi tải lên tệp!';
+      }
    }
-
-   
 
 }
 

@@ -32,7 +32,7 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="courses">
 
-   <h1 class="heading">Khóa học đã lưu</h1>
+   <h1 class="heading">Khóa học đã đăng ký</h1>
 
    <div class="box-container">
 
@@ -71,7 +71,7 @@ if(isset($_COOKIE['user_id'])){
             }
          }
       }else{
-         echo '<p class="empty">Bạn chưa lưu khóa học, bài giảng nào!</p>';
+         echo '<p class="empty">Bạn chưa đăng ký khóa học, bài giảng nào!</p>';
       }
       ?>
 
@@ -88,7 +88,7 @@ if(isset($_COOKIE['user_id'])){
 
 
 
-<?php include 'components/footer.php'; ?>
+
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

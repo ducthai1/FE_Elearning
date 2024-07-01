@@ -99,7 +99,10 @@ if(isset($message)){
 
    <nav class="navbar">
       <a href="home.php"><i class="fas fa-home"></i><span>Trang chủ</span></a>
-      <a href="about.php"><i class="fas fa-question"></i><span>Về chúng tôi</span></a>
+      <!-- <a href="about.php"><i class="fas fa-question"></i><span>Về chúng tôi</span></a> -->
+      <?php if($user_id != ''){ ?>
+      <a href="chatbot.php"><i class="fas fa-comment"></i><span>Chatbot</span></a>
+      <?php } ?> 
       <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>Khóa học</span></a>
       <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Giảng viên</span></a>
       <a href="contact.php"><i class="fas fa-headset"></i><span>Liên hệ</span></a>

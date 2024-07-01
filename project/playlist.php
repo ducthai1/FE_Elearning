@@ -22,17 +22,18 @@ if(isset($_POST['save_list'])){
       $list_id = $_POST['list_id'];
       $list_id = filter_var($list_id, FILTER_SANITIZE_STRING);
 
-      $select_list = $conn->prepare("SELECT * FROM `bookmark` WHERE user_id = ? AND playlist_id = ?");
+      $select_list = $conn->prepare("SELECT * FROM `registrations` WHERE user_id = ? AND playlist_id = ?");
       $select_list->execute([$user_id, $list_id]);
 
       if($select_list->rowCount() > 0){
-         $remove_bookmark = $conn->prepare("DELETE FROM `bookmark` WHERE user_id = ? AND playlist_id = ?");
-         $remove_bookmark->execute([$user_id, $list_id]);
+         $remove_registrations = $conn->prepare("DELETE FROM `registrations` WHERE user_id = ? AND playlist_id = ?");
+         $remove_registrations->execute([$user_id, $list_id]);
          $message[] = 'Đã xóa khoá học!';
       }else{
-         $insert_bookmark = $conn->prepare("INSERT INTO `bookmark`(user_id, playlist_id) VALUES(?,?)");
-         $insert_bookmark->execute([$user_id, $list_id]);
-         $message[] = 'Đã lưu khóa học!';
+         $id = unique_id();
+         $insert_registrations = $conn->prepare("INSERT INTO `registrations`(id, user_id, playlist_id) VALUES(?,?,?)");
+         $insert_registrations->execute([$id, $user_id, $list_id]);
+         $message[] = 'Đã đăng ký khóa học!';
       }
 
    }else{
@@ -86,8 +87,8 @@ if(isset($_POST['save_list'])){
             $select_tutor->execute([$fetch_playlist['tutor_id']]);
             $fetch_tutor = $select_tutor->fetch(PDO::FETCH_ASSOC);
 
-            $select_bookmark = $conn->prepare("SELECT * FROM `bookmark` WHERE user_id = ? AND playlist_id = ?");
-            $select_bookmark->execute([$user_id, $playlist_id]);
+            $select_registrations = $conn->prepare("SELECT * FROM `registrations` WHERE user_id = ? AND playlist_id = ?");
+            $select_registrations->execute([$user_id, $playlist_id]);
 
       ?>
 
@@ -95,13 +96,13 @@ if(isset($_POST['save_list'])){
          <form action="" method="post" class="save-list">
             <input type="hidden" name="list_id" value="<?= $playlist_id; ?>">
             <?php
-               if($select_bookmark->rowCount() > 0){
+               if($select_registrations->rowCount() > 0){
             ?>
-            <button type="submit" name="save_list"><i class="fas fa-bookmark"></i><span>Đã lưu</span></button>
+            <button type="submit" name="save_list"><span>Đã đăng ký khóa học</span></button>
             <?php
                }else{
             ?>
-               <button type="submit" name="save_list"><i class="far fa-bookmark"></i><span>Lưu khóa học</span></button>
+               <button type="submit" name="save_list"><span>Đăng ký khóa học</span></button>
             <?php
                }
             ?>

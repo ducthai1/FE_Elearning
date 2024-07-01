@@ -87,7 +87,7 @@ if(isset($_POST['delete_video'])){
             <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
             <input type="submit" value="delete" class="delete-btn" onclick="return confirm('Xóa bài giảng này?');" name="delete_video">
          </form>
-         <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">view content</a>
+         <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">Xem nội dung</a>
       </div>
    <?php
          }
